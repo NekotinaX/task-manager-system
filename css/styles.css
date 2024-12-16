@@ -1,0 +1,128 @@
+/* Basic styles for dark theme */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #f5f5f5; /* Light text */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh; /* Ensures the background covers the entire screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Pseudo-element for darkening the image */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('background.jpg'); /* Add your image link here */
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4); /* Apply a darkening filter */
+    z-index: -1; /* Places the darkening effect beneath the content */
+}
+
+/* Centered container with a transparent background */
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for the container */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #f5f5f5;
+    margin-bottom: 20px;
+}
+
+/* Styles for forms */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #333; /* Dark gray input fields */
+    color: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    background-color: #444;
+}
+
+/* Styles for buttons */
+button {
+    background-color: #ff6f00; /* Orange color */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ff8c1a; /* Lighter orange on hover */
+}
+
+/* Styles for links */
+a {
+    color: #ff6f00; /* Orange color */
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styles for error messages */
+.error {
+    color: #ff4d4d; /* Red for errors */
+    text-align: center;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* Slight spacing between list items */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+}
